@@ -1,0 +1,28 @@
+
+
+spring:
+
+  application:
+    name: orders
+  datasource:
+    url: jdbc:mysql://localhost:3307/shop-mall?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowMultiQueries=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+
+#    type: com.alibaba.druid.pool.xa.DruidXADataSource
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: non_null
+server:
+  servlet:
+    context-path: /api
+  port: 8081
+
+
+mybatis-plus:
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+mybatis:
+  mapper-locations: classpath:***/*/*.xml
