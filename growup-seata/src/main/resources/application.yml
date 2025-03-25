@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: financial
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/project?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowMultiQueries=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: "123456"
+  data:
+    redis:
+      host: localhost
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+seata:
+  application-id: springboot-seata
+  tx-service-group: my_test_tx_group
+  config:
+    type: file
+  registry:
+    zk:
+      server-addr: 127.0.0.1:2181
