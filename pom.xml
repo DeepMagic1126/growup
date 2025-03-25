@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.14</version>
+        <version>3.4.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -24,11 +24,13 @@
         <module>growup-spring-project</module>
         <module>growup-flink</module>
         <module>growup-nacos</module>
+        <module>growup-seata</module>
+        <module>growup-framework</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
 
         <!--    内部包相关    -->
         <flink-basic.version>0.0.1</flink-basic.version>
@@ -40,6 +42,10 @@
         <flink-jdbc.version>1.10.0</flink-jdbc.version>
         <flink-kafka.version>3.4.0-1.20</flink-kafka.version>
         <flink-connector-jdbc.version>3.2.0-1.19</flink-connector-jdbc.version>
+
+        <kafka.version>3.9.0</kafka.version>
+        <rocketmq-client.version>5.3.1</rocketmq-client.version>
+
         <mysql.version>8.0.33</mysql.version>
         <scala.version>2.12</scala.version>
 
@@ -47,12 +53,20 @@
         <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
         <nacos.version>2.2.1</nacos.version>
         <sentinel.version>1.8.6</sentinel.version>
-        <seata.version>1.7.0</seata.version>
+        <seata.version>2.1.0</seata.version>
+
     </properties>
 
     <dependencyManagement>
 
         <dependencies>
+
+            <dependency>
+                <groupId>org.apache.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${seata.version}</version>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba-nacos-discovery -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -122,7 +136,19 @@
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-client</artifactId>
-                <version>5.3.1</version>
+                <version>${rocketmq-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>3.0.4</version>
             </dependency>
 
         </dependencies>
