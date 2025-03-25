@@ -7,27 +7,42 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.12</version>
+        <version>2.7.14</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.ziyuan</groupId>
-    <artifactId>study-all</artifactId>
+    <groupId>org.deepmagic</groupId>
+    <artifactId>growup</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>nacos</module>
-        <module>custom-starter</module>
-        <module>custom-spring-boot-autoconfigure</module>
-        <module>spark</module>
-        <module>openfeign</module>
-        <module>transaction</module>
+        <module>growup-spark</module>
+        <module>growup-openfeign</module>
+        <module>growup-basic</module>
+        <module>growup-message-middle</module>
+        <module>growup-spring-project</module>
+        <module>growup-flink</module>
+        <module>growup-nacos</module>
     </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+
+        <!--    内部包相关    -->
+        <flink-basic.version>0.0.1</flink-basic.version>
+        <flink-data-sinks.version>0.0.1</flink-data-sinks.version>
+        <flink-basic.version>0.0.1</flink-basic.version>
+
+        <!--    flink 相关    -->
+        <flink.verison>1.20.1</flink.verison>
+        <flink-jdbc.version>1.10.0</flink-jdbc.version>
+        <flink-kafka.version>3.4.0-1.20</flink-kafka.version>
+        <flink-connector-jdbc.version>3.2.0-1.19</flink-connector-jdbc.version>
+        <mysql.version>8.0.33</mysql.version>
+        <scala.version>2.12</scala.version>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
         <nacos.version>2.2.1</nacos.version>
@@ -43,6 +58,71 @@
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
                 <version>${spring-cloud-alibaba.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-java -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java</artifactId>
+                <version>${flink.verison}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-clients</artifactId>
+                <version>${flink.verison}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-base</artifactId>
+                <version>${flink.verison}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-common -->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-table-common</artifactId>
+                <version>${flink.verison}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-kafka</artifactId>
+                <version>${flink-kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-jdbc</artifactId>
+                <version>${flink-connector-jdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-jdbc_2.12</artifactId>
+                <version>${flink-jdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-runtime-web</artifactId>
+                <version>${flink.verison}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-scala_2.12</artifactId>
+                <version>${flink.verison}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--工具包依赖-->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>30.1-jre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>5.3.1</version>
             </dependency>
 
         </dependencies>
