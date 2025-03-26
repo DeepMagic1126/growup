@@ -15,7 +15,7 @@ public class E2EUtil {
 
     public static void writeE2EResFile(String outPutRes) {
         try {
-            Files.write(Paths.get("result.yaml"), outPutRes.getBytes());
+            Files.write(Paths.get("/Users/chenbin/IdeaProjects/growup/growup-seata/src/main/resources/result.yaml"), outPutRes.getBytes());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
