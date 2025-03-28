@@ -1,11 +1,12 @@
 spring:
   application:
-    name: financial
+    name: ziyuan
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/project?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowMultiQueries=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: "123456"
+
   data:
     redis:
       host: localhost
@@ -18,3 +19,4 @@ server:
   tomcat:
     threads:
       max: 500
+

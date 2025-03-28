@@ -150,6 +150,12 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>3.0.4</version>
             </dependency>
+            <!-- MyBatis Plus动态数据源 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+                <version>4.3.1</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

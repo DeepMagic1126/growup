@@ -10,7 +10,6 @@ import org.deepmagic.project.entity.ProductsInventory;
  * ProductsInventoryMapper
  *
  * @author chenbin
- * @apiNote TODO
  * @since 2025/3/7 22:12
  */
 @Mapper
