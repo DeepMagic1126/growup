@@ -3,10 +3,7 @@ package org.deepmagic.project.controller;
 import jakarta.annotation.Resource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.deepmagic.project.entity.ProductsInventory;
-import org.deepmagic.project.service.CglibProxyService;
-import org.deepmagic.project.service.JdkProxyService;
-import org.deepmagic.project.service.ProductsInventoryService;
-import org.deepmagic.project.service.ProductsInventorySolveService;
+import org.deepmagic.project.service.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +26,7 @@ public class ProductsInventoryController {
     private ProductsInventorySolveService productsInventorySolveService;
 
     @Resource
-    private JdkProxyService jdkProxyService;
+    private ProxyService jdkProxyService;
     @Resource
     private CglibProxyService cglibProxyService;
 

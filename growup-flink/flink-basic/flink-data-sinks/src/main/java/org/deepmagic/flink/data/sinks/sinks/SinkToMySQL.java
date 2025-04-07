@@ -16,10 +16,13 @@ import java.sql.SQLException;
  * CustomJdbcSink
  *
  * @author chenbin
- * @apiNote TODO
+ * @apiNote
  * @since 2025/3/13 22:23
  */
 public class SinkToMySQL {
+
+    public SinkToMySQL() {
+    }
 
     public static JdbcSink<Student> getSink() {
         JdbcConnectionOptions jdbcConnectionOptions = new JdbcConnectionOptions.JdbcConnectionOptionsBuilder()
@@ -46,7 +49,6 @@ public class SinkToMySQL {
                 ps.setString(1, student.getName());
                 ps.setInt(2, student.getAge());
             }
-
         });
     }
 

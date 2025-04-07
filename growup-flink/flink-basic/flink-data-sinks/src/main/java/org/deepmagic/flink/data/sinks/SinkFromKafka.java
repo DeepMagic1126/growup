@@ -34,10 +34,9 @@ import java.util.stream.Collectors;
  * Main
  *
  * @author chenbin
- * @apiNote TODO
  * @since 2025/3/13 15:53
  */
-public class Main {
+public class SinkFromKafka {
 
 
     public static class StudentDeserializer implements Deserializer<Student> {

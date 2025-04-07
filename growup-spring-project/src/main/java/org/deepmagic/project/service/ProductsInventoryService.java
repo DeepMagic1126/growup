@@ -1,6 +1,6 @@
 package org.deepmagic.project.service;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
+//import com.baomidou.dynamic.datasource.annotation.DS;
 import jakarta.annotation.Resource;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -27,19 +27,19 @@ public class ProductsInventoryService {
     @Resource
     private SqlSessionFactory sqlSessionFactory;
 
-    @DS("master")
+//    @DS("master")
     public ProductsInventory get(Long productId) {
         Configuration configuration = sqlSessionFactory.getConfiguration();
         return mapper.get(productId);
     }
 
-    @DS("slave")
+//    @DS("slave")
     public ProductsInventory slaveGet(Long productId) {
         return mapper.get(productId);
     }
 
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+//    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public String buy(Long productId) {
         int i = mapper.buy(productId);
         if (i < 1) {

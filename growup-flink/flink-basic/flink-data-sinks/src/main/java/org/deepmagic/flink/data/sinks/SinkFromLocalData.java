@@ -26,7 +26,7 @@ import java.util.List;
  * @apiNote
  * @since 2025/3/13 15:54
  */
-public class Main2 {
+public class SinkFromLocalData {
     public static void main(String[] args) throws Exception {
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 

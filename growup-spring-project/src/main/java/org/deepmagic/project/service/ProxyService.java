@@ -8,5 +8,5 @@ package org.deepmagic.project.service;
  */
 public interface ProxyService {
 
-    void run();
+     void run();
 }

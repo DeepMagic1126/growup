@@ -10,7 +10,8 @@ spring:
   data:
     redis:
       host: localhost
-
+  main:
+    allow-circular-references: true
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

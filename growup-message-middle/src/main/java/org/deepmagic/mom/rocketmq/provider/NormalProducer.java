@@ -5,11 +5,12 @@ import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
 
+
 /**
  * SyncProducer
  *
  * @author chenbin
- * @apiNote TODO
+ * @apiNote 同步消息Producer
  * @since 2025/3/6 22:42
  */
 public class NormalProducer {
